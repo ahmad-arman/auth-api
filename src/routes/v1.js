@@ -39,7 +39,11 @@ router.get('/:model/:id', handleGetOne);
 router.post('/:model',upload.none(), handleCreate);
 router.put('/:model/:id', handleUpdate);
 router.delete('/:model/:id', handleDelete);
-
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
 async function handleGetAll(req, res) {
  
   try {

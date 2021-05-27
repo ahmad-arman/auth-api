@@ -1,5 +1,10 @@
 'use strict';
-
+/**
+ * 
+ * @param {metthod,path} req 
+ * @param {path} res 
+ * @param {} next 
+ */
 // All middleware has access to the request.
 // Here, we're simply logging out the interesting parts
 const logger = (req, res, next) => {

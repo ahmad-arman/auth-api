@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>auth-api</h1>
+<h2>About</h2>
+<p>A REST Express API, has various endpoints that perform CRUD operations on a Mongo Database, using the REST standards .
+It has two data models and two routers : clothes and food  and sign in sign up .</p>
+<hr>
+<h2>Author</h2>
+<p>Ahmad Arman</p>
+<hr>
+<h2>Links</h2>
+<ul>
+<li>(link heroku ready to test on postman)[https://ahmad-auth-api.herokuapp.com/signup]</li>
+<li>(link heroku ready to test on postman)[https://ahmad-auth-api.herokuapp.com/signin]</li>
+<li><a href="https://github.com/ahmad-arman/auth-api/pull/1">Submission Pull Request</a></li>
+<li><a href="https://ahmad-auth-api.herokuapp.com/">Deployed App</a></li>
+<li><a href="https://github.com/ahmad-arman/auth-api/actions">Error Report</a></li>
+</ul>
+<h2>Setup</h2>
+<ol>
+<li><code>(.env)</code> file</li>
+</ol>
+<pre class="prettyprint source"><code>PORT=3000
+MONGODB_URI =mongodb+srv://ahmad:eng.ahmad123@cluster0.kilwd.mongodb.net/test-v2
+MONGOOSE_TEST_URI =mongodb+srv://ahmad:eng.ahmad123@cluster0.kilwd.mongodb.net/test-v2-npm
+SECRET=99999
+</code></pre>
+<ol start="2">
+<li>Install the following dependencies</li>
+</ol>
+<pre class="prettyprint source"><code>npm init -y 
+npm i cors dotenv express morgan mongoose
+npm i -D jest supertest
+npm i @code-fellows/supergoose 
+mongod --dbpath=/Users/path/to/data/db
+</code></pre>
+<h2>Running the app</h2>
+<ol>
+<li>clone the repo.</li>
+<li>Enter the command <code>npm start</code></li>
+<li>Use endpoints :
+<h2>Food</h2>
+</li>
+</ol>
+<h3>* <code>/api/v1/food</code></h3>
+<br>
+<ul>
+<li><strong>Method</strong> : GET</li>
+<li><strong>CRUD Operation</strong> : Read / Gets All Food Records</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>[
+    {
+        &quot;_id&quot;: &quot;60a59fe36c328241b96f7237&quot;,
+        &quot;name&quot;: &quot;burger&quot;,
+        &quot;role&quot;: &quot;meat&quot;,
+        &quot;__v&quot;: 0
+    },
+    {
+        &quot;_id&quot;: &quot;60a5a0156c328241b96f7238&quot;,
+        &quot;name&quot;: &quot;pizza&quot;,
+        &quot;role&quot;: &quot;chicken&quot;,
+        &quot;__v&quot;: 0
+    }
+]
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : POST</li>
+<li><strong>CRUD Operation</strong> : Create / Add a Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>    {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;pizza&quot;,
+        &quot;type&quot;: &quot;chicken&quot;,
+        &quot;__v&quot;: 0
+    }
+</code></pre>
+<br>
+<h3>* <code>/api/v1/food/id</code></h3>
+<br>
+<ul>
+<li><strong>Method</strong> : GET</li>
+<li><strong>CRUD Operation</strong> : Read / Get One Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>    {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;pizza&quot;,
+        &quot;type&quot;: &quot;chicken&quot;,
+        &quot;__v&quot;: 0
+    }
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : PUT</li>
+<li><strong>CRUD Operation</strong> : UPDATE / Update a Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>    {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;pizza&quot;,
+        &quot;type&quot;: &quot;chicken&quot;,
+        &quot;__v&quot;: 0
+    }
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : DELETE</li>
+<li><strong>CRUD Operation</strong> : DELETE / Delete a Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>    {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;pizza&quot;,
+        &quot;type&quot;: &quot;chicken&quot;,
+        &quot;__v&quot;: 0
+    }
+</code></pre>
+<p><br><br><br></p>
+<hr>
+<br><br>
+<h2>Clothes</h2>
+<h3>* <code>/api/v1/clothes</code></h3>
+<br>
+<ul>
+<li><strong>Method</strong> : GET</li>
+<li><strong>CRUD Operation</strong> : Read / Gets All clothes Records</li>
+<li><strong>Response Body</strong>  : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>[
+    {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;jacket&quot;,
+        &quot;type&quot;: &quot;kids&quot;,
+        &quot;__v&quot;: 0
+    },
+    {
+        &quot;_id&quot;: &quot;60a5945ce109aa218e6f5a70&quot;,
+        &quot;name&quot;: &quot;jacket&quot;,
+        &quot;type&quot;: &quot;man&quot;,
+        &quot;__v&quot;: 0
+    }
+]
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : POST</li>
+<li><strong>CRUD Operation</strong> : Create / Add a Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>{
+    &quot;name&quot;:&quot;jacket&quot;,
+    &quot;type&quot;:&quot;man&quot;
+}
+</code></pre>
+<br>
+<h3>* <code>/api/v1/clothes/id</code></h3>
+<br>
+- **Method** : GET 
+- **CRUD Operation** : Read / Get One Record
+- **Response Body** : JSON
+```
+ {
+        "_id": "60a5938ee109aa218e6f5a6f",
+        "name": "jacket",
+        "type": "man",
+        "__v": 0
+    }
+```
+<br>
+<ul>
+<li><strong>Method</strong> : PUT</li>
+<li><strong>CRUD Operation</strong> : UPDATE / Update a Record</li>
+<li><strong>Response Body</strong>  : JSON</li>
+</ul>
+<pre class="prettyprint source"><code> {
+        &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+        &quot;name&quot;: &quot;jacket&quot;,
+        &quot;type&quot;: &quot;mannn&quot;,
+        &quot;__v&quot;: 0
+    }
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : DELETE</li>
+<li><strong>CRUD Operation</strong> : DELETE / Delete a Record</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code> {
+     &quot;_id&quot;: &quot;60a5938ee109aa218e6f5a6f&quot;,
+     &quot;name&quot;: &quot;jacket&quot;,
+     &quot;type&quot;: &quot;mannn&quot;,
+      &quot;__v&quot;: 0
+    }
+</code></pre>
+<ol start="4">
+<li>Test .</li>
+</ol>
+<ul>
+<li>There's 2 test files . logger.test.js and server.test.js</li>
+<li>In terminal run :</li>
+</ul>
+<pre class="prettyprint source"><code>npm test
+</code></pre>
+<p><br><br><br></p>
+<hr>
+<br><br>
+<h2>About</h2>
+<p>has various endpoints that perform sign in and sign up  and users and secret</p>
+<hr>
+<h2>Author</h2>
+<p>Ahmad Arman</p>
+<hr>
+<hr>
+<h2>Setup</h2>
+<ol>
+<li><code>(.env)</code> file</li>
+</ol>
+<pre class="prettyprint source"><code>PORT = 3000
+MONGOOSE_URI = mongodb+srv://ahmad:eng.ahmad123@cluster0.kilwd.mongodb.net/test
+
+
+</code></pre>
+<ol start="2">
+<li>Install the following dependencies</li>
+</ol>
+<pre class="prettyprint source"><code>npm init -y 
+npm i &quot;@code-fellows/supergoose&quot;: &quot;^1.1.0&quot;,
+    &quot;base-64&quot;: &quot;^1.0.0&quot;,
+    &quot;bcrypt&quot;: &quot;^5.0.1&quot;,
+    &quot;cors&quot;: &quot;^2.8.5&quot;,
+    &quot;dotenv&quot;: &quot;^8.6.0&quot;,
+    &quot;express&quot;: &quot;^4.17.1&quot;,
+    &quot;express-session&quot;: &quot;^1.17.2&quot;,
+    &quot;jest&quot;: &quot;^26.6.3&quot;,
+    &quot;jsonwebtoken&quot;: &quot;^8.5.1&quot;,
+    &quot;mongoose&quot;: &quot;^5.12.11&quot;,
+    &quot;morgan&quot;: &quot;^1.10.0&quot;,
+    &quot;session&quot;: &quot;^0.1.0&quot; 
+
+
+
+</code></pre>
+<h2>Running the app</h2>
+<ol>
+<li>clone the repo.</li>
+<li>Enter the command <code>npm start</code></li>
+<li>Use endpoints :
+<h2>sign in</h2>
+</li>
+</ol>
+<h3>* <code>/signin</code></h3>
+<br>
+<ul>
+<li><strong>Method</strong> : post</li>
+<li><strong>CRUD Operation</strong> :  https://ahmad-bearer-auth.herokuapp.com/signin</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>{
+    &quot;user&quot;: {
+        &quot;_id&quot;: &quot;60ad7274327db30015ce844a&quot;,
+        &quot;username&quot;: &quot;ahmadadmain100&quot;,
+        &quot;password&quot;: &quot;$2b$10$NH.uC7huSLZyhEel7WMWK.Gjb2RAFlAzhm0utAoiY2hGxaY2wTDbS&quot;,
+        &quot;__v&quot;: 0
+    },
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFobWFkYWRtYWluMTAwIiwiaWF0IjoxNjIxOTc5OTU1LCJleHAiOjE2MjIwNjYzNTV9.HBTK8zqaYp3djNUAevFiczt5YjfPwXT1a2CEYBlG7OA&quot;
+}
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : POST</li>
+<li><strong>CRUD Operation</strong> :https://ahmad-bearer-auth.herokuapp.com/signup</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>   {
+    &quot;user&quot;: {
+        &quot;_id&quot;: &quot;60ad7274327db30015ce844a&quot;,
+        &quot;username&quot;: &quot;ahmadadmain100&quot;,
+        &quot;password&quot;: &quot;$2b$10$NH.uC7huSLZyhEel7WMWK.Gjb2RAFlAzhm0utAoiY2hGxaY2wTDbS&quot;,
+        &quot;__v&quot;: 0
+    },
+    &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFobWFkYWRtYWluMTAwIiwiaWF0IjoxNjIxOTc5NzY1LCJleHAiOjE2MjIwNjYxNjV9.HCo4Kr0OeVMFngY4hGqisaEo64nY4-z5_IagNautoSE&quot;
+}
+</code></pre>
+<br>
+<br>
+<ul>
+<li><strong>Method</strong> : GET</li>
+<li><strong>CRUD Operation</strong> : https://ahmad-bearer-auth.herokuapp.com/users</li>
+<li><strong>Response Body</strong>   : JSON</li>
+</ul>
+<pre class="prettyprint source"><code>  [
+    &quot;aaaaaassssaa&quot;,
+    &quot;ahmadarman&quot;,
+    &quot;ahmdadmain&quot;,
+    &quot;ahmadadmain&quot;,
+    &quot;ahmadadmain100&quot;
+]
+</code></pre>
+<br>
+<ul>
+<li><strong>Method</strong> : GET</li>
+<li><strong>CRUD Operation</strong> : https://ahmad-bearer-auth.herokuapp.com/secret</li>
+<li><strong>Response Body</strong>   : text</li>
+</ul>
+<pre class="prettyprint source"><code>Welcome to the secret area!
+</code></pre>
+<br>
+<ol start="4">
+<li>Test .</li>
+</ol>
+<ul>
+<li>There's 3 test files .basic-auth-middleware.test.js  ,,,, bearer-auth-middleware.test.js ,,,,, router.test.js</li>
+<li>In terminal run :</li>
+</ul>
+<pre class="prettyprint source"><code>npm test
+</code></pre>
+<p><br><br><br></p>
+<hr>
+<br><br>
+<h2>UML Diagram</h2>
+<p><img src="./lab08.png" alt="image"></p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu May 27 2021 03:01:21 GMT+0300 (Eastern European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
