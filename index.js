@@ -10,6 +10,9 @@ const options = {
   useUnifiedTopology: true,
 };
 mongoose.connect(process.env.MONGODB_URI, options);
-
+/**
+ * @param(port)
+ * @description(start the web server)
+ */
 // Start the web server
 require('./src/server.js').start(process.env.PORT);

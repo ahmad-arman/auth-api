@@ -58,7 +58,9 @@ authRouter.get('/secret', bearerAuth, async (req, res, next) => {
   }
  
 });
+/**
 
+ */
 authRouter.get('/user', bearerAuth, permissions('read'),async (req, res) => {
  
   try {
